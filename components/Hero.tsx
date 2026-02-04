@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-safety-orange/30 bg-safety-orange/5">
             <span className="size-1.5 bg-safety-orange animate-ping"></span>
-            <span className="text-[10px] font-display font-bold text-safety-orange tracking-[0.3em] uppercase">Status: Nominal</span>
+            <span className="text-[10px] font-display font-bold text-safety-orange tracking-[0.4em] uppercase">Status: Nominal</span>
           </div>
           <h1 className="text-6xl lg:text-8xl font-black text-white leading-[0.85] font-display tracking-tighter">
-            SELVARAJAN<br/>
+            SELVARAJAN<br />
             <span className="text-safety-orange">SIRPY</span>
           </h1>
           <h2 className="text-xl font-bold tracking-widest text-cad-gray uppercase font-display border-l-2 border-safety-orange pl-4 py-1">
@@ -25,11 +25,11 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap gap-6">
-          <button onClick={() => document.getElementById('modules')?.scrollIntoView()} className="px-10 py-4 bg-safety-orange text-[#0f172a] font-display font-black text-xs tracking-[0.2em] hover:bg-white transition-all hover:scale-[1.02] flex items-center gap-4">
+          <button onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 bg-safety-orange text-[#0f172a] font-display font-black text-xs tracking-[0.2em] hover:bg-white transition-all hover:scale-[1.02] flex items-center gap-4">
             INIT_DEPLOYMENT()
             <span className="text-lg">→</span>
           </button>
-          <button onClick={() => document.getElementById('timeline')?.scrollIntoView()} className="px-10 py-4 border border-cad-gray text-white font-display font-bold text-xs tracking-[0.2em] hover:border-safety-orange transition-all hover:bg-safety-orange/5">
+          <button onClick={() => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 border border-cad-gray text-white font-display font-bold text-xs tracking-[0.2em] hover:border-safety-orange transition-all hover:bg-safety-orange/5">
             LOGS_HISTORY
           </button>
         </div>
@@ -59,7 +59,6 @@ const Hero: React.FC = () => {
           </div>
           
           <svg className="w-full h-full text-safety-orange/60" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1">
-             {/* Schematic lines */}
              <path d="M40 100 H160 M100 40 V160" opacity="0.1" />
              <circle cx="100" cy="100" r="40" />
              <rect x="80" y="80" width="40" height="40" strokeDasharray="4 2" />
@@ -69,11 +68,10 @@ const Hero: React.FC = () => {
           </svg>
           
           <div className="absolute top-0 right-0 p-4 font-display text-[9px] text-safety-orange/50 uppercase tracking-widest">
-            Module: Perception_Core<br/>
+            Module: Perception_Core<br />
             Ref: S-119-02
           </div>
           
-          {/* Diagnostic Corner Boxes */}
           <div className="absolute top-2 left-2 size-4 border-t border-l border-safety-orange"></div>
           <div className="absolute top-2 right-2 size-4 border-t border-r border-safety-orange"></div>
           <div className="absolute bottom-2 left-2 size-4 border-b border-l border-safety-orange"></div>

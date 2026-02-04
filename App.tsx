@@ -7,7 +7,6 @@ const App: React.FC = () => {
   const [bootState, setBootState] = useState<'booting' | 'ready' | 'active'>('booting');
 
   useEffect(() => {
-    // Basic auto-auth timer to move from establishing connection to ready
     const timer = setTimeout(() => {
       setBootState('ready');
     }, 2500);
@@ -19,13 +18,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background-dark overflow-hidden relative">
-      {/* Background Grid Pattern - Always present */}
-      <div className="fixed inset-0 grid-bg opacity-30 pointer-events-none"></div>
+    <div className="min-h-screen bg-gunmetal overflow-hidden relative">
+      {/* Background Blueprint Grid */}
+      <div className="fixed inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
       
-      {/* Scanline Effect */}
-      <div className="fixed inset-0 scanline-overlay pointer-events-none opacity-20"></div>
-      <div className="fixed top-0 left-0 w-full h-1 bg-primary/20 animate-scanline pointer-events-none z-[100]"></div>
+      {/* Scanline / HUD Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[100] border-[1px] border-safety-orange/5 m-4"></div>
+      <div className="fixed top-0 left-0 w-full h-px bg-safety-orange/10 animate-scanline pointer-events-none z-[101]"></div>
 
       {bootState !== 'active' ? (
         <Intro 

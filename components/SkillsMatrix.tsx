@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { SKILLS } from '../constants';
 
 interface SkillsMatrixProps {
@@ -7,6 +7,9 @@ interface SkillsMatrixProps {
 }
 
 const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleSkills = showAll ? SKILLS : SKILLS.slice(0, 4);
+
   return (
     <section id="skills" className="font-display">
       <div className="flex items-center gap-6 mb-16">
@@ -15,17 +18,22 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
           <h2 className="text-3xl font-black text-white tracking-tighter uppercase">CAPABILITIES_MATRIX</h2>
         </div>
         <div className="h-[1px] grow bg-cad-gray/20"></div>
+        <button 
+          onClick={() => setShowAll(!showAll)}
+          className="text-[10px] font-bold text-safety-orange border border-safety-orange/40 px-4 py-2 hover:bg-safety-orange/10 transition-colors whitespace-nowrap"
+        >
+          {showAll ? 'COMPRESS_MATRIX' : 'EXPAND_MATRIX'}
+        </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {SKILLS.map((skill) => (
+        {visibleSkills.map((skill) => (
           <div 
             key={skill.id}
             onMouseEnter={() => onSkillHover(skill.id)}
             onMouseLeave={() => onSkillHover(null)}
             className="group relative bg-[#0f172a] border border-cad-gray/40 hover:border-safety-orange transition-all duration-300 overflow-hidden"
           >
-            {/* Top Tag Header */}
             <div className="flex items-center justify-between px-4 py-2 bg-cad-gray/10 border-b border-cad-gray/40 group-hover:bg-safety-orange group-hover:border-safety-orange transition-colors">
               <span className="text-[10px] font-bold text-safety-orange group-hover:text-[#0f172a] transition-colors uppercase tracking-widest">
                 Detection: {skill.id}
@@ -70,7 +78,6 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
               </div>
             </div>
 
-            {/* Corner Bracket decorations */}
             <div className="absolute top-0 left-0 size-2 border-t border-l border-safety-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="absolute top-0 right-0 size-2 border-t border-r border-safety-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="absolute bottom-0 left-0 size-2 border-b border-l border-safety-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
