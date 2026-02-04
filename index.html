@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIAGNOSTIC: SIRPY_S // PERCEPTION_ENGINE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            "safety-orange": "#f97316",
+            "electric-violet": "#8b5cf6",
+            "gunmetal": "#0f172a",
+            "cad-gray": "#334155",
+            "primary": "#f97316", // Safety Orange as primary
+          },
+          fontFamily: {
+            "display": ["JetBrains Mono", "monospace"],
+            "sans": ["Inter", "sans-serif"]
+          },
+          animation: {
+            'aperture-pulse': 'aperture 3s ease-in-out infinite',
+            'reticle-rotate': 'spin 10s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            aperture: {
+              '0%, 100%': { transform: 'scale(1)', opacity: '0.2' },
+              '50%': { transform: 'scale(1.1)', opacity: '0.5' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      cursor: crosshair;
+      scroll-behavior: smooth;
+    }
+    .blueprint-grid {
+      background-image: 
+        linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .blueprint-grid-fine {
+      background-image: 
+        linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+      background-size: 10px 10px;
+    }
+    .bracket-box {
+      position: relative;
+    }
+    .bracket-box::before, .bracket-box::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-color: #f97316;
+    }
+    .bracket-box::before { top: 0; left: 0; border-top: 1px solid; border-left: 1px solid; }
+    .bracket-box::after { bottom: 0; right: 0; border-bottom: 1px solid; border-right: 1px solid; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #f97316; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="font-sans">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
