@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface HeaderProps {
@@ -14,29 +13,28 @@ const Header: React.FC<HeaderProps> = ({ telemetry }) => {
             <span className="text-safety-orange font-bold text-xs">+</span>
           </div>
           <div className="flex flex-col">
-            <h2 className="text-xs font-bold tracking-widest text-white uppercase">
-              DIAGNOSTIC: SIRPY_S
-            </h2>
-            <span className="text-[8px] text-safety-orange opacity-60 font-bold">FIRMWARE_V2.0.4</span>
+            <h2 className="text-xs font-bold tracking-widest text-white uppercase m-0">DIAGNOSTIC: SIRPY_S</h2>
+            <span className="text-[8px] text-safety-orange opacity-60 font-bold uppercase">FIRMWARE_V2.0.4</span>
           </div>
         </div>
         
         <nav className="hidden lg:flex items-center gap-8">
-          {[
-            { label: 'SYSTEM_SPECS', id: 'hud' },
-            { label: 'CAPABILITIES', id: 'skills' },
-            { label: 'MODULES', id: 'modules' },
-            { label: 'MISSION_LOGS', id: 'timeline' }
-          ].map((item, idx) => (
-            <a 
-              key={item.label}
-              href={`#${item.id}`}
-              className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2"
-            >
-              <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">0{idx + 1}</span>
-              <span className="font-bold">{item.label}</span>
-            </a>
-          ))}
+          <a href="#hud" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
+            <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">01</span>
+            <span className="font-bold">SYSTEM_SPECS</span>
+          </a>
+          <a href="#skills" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
+            <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">02</span>
+            <span className="font-bold">CAPABILITIES</span>
+          </a>
+          <a href="#modules" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
+            <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">03</span>
+            <span className="font-bold">MODULES</span>
+          </a>
+          <a href="#timeline" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
+            <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">04</span>
+            <span className="font-bold">MISSION_LOGS</span>
+          </a>
         </nav>
 
         <div className="flex items-center gap-8 border-l border-cad-gray/30 pl-8">

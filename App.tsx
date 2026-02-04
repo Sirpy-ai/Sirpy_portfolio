@@ -7,9 +7,11 @@ const App: React.FC = () => {
   const [bootState, setBootState] = useState<'booting' | 'ready' | 'active'>('booting');
 
   useEffect(() => {
+    // We set to ready after a fixed time. 
+    // The intro typing takes about 4-5s total.
     const timer = setTimeout(() => {
       setBootState('ready');
-    }, 2500);
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -22,7 +24,7 @@ const App: React.FC = () => {
       {/* Background Blueprint Grid */}
       <div className="fixed inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
       
-      {/* Scanline / HUD Overlay */}
+      {/* Global Scanline / HUD Overlay */}
       <div className="fixed inset-0 pointer-events-none z-[100] border-[1px] border-safety-orange/5 m-4"></div>
       <div className="fixed top-0 left-0 w-full h-px bg-safety-orange/10 animate-scanline pointer-events-none z-[101]"></div>
 

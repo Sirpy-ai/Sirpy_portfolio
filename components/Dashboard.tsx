@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Hero from './Hero';
@@ -19,7 +18,7 @@ const Dashboard: React.FC = () => {
     };
     
     const handleMouseMove = (e: MouseEvent) => {
-      setTelemetry(prev => ({ ...prev, x: e.clientX, y: e.clientY }));
+      setTelemetry(prev => ({ ...prev, x: Math.floor(e.clientX), y: Math.floor(e.clientY) }));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -41,11 +40,10 @@ const Dashboard: React.FC = () => {
         <ProjectModules activeSkillId={activeSkillId} />
         <ExperienceTimeline />
         
-        {/* Placeholder for expansion */}
         <section id="labs" className="pt-20 border-t border-cad-gray/30">
-          <div className="bracket-box p-12 bg-cad-gray/10 text-center opacity-40 grayscale group hover:grayscale-0 hover:opacity-100 transition-all">
-            <h3 className="font-display font-bold text-safety-orange tracking-widest mb-4">FUTURE_EXPANSION_MODULES</h3>
-            <p className="text-sm font-sans">Autonomous Pathfinding Simulations & Real-time Telemetry Feeds (In-Dev)</p>
+          <div className="p-12 bg-cad-gray/10 text-center opacity-40 group hover:opacity-100 transition-all border border-dashed border-cad-gray/30">
+            <h3 className="font-display font-bold text-safety-orange tracking-widest mb-4 uppercase">Future Expansion Modules</h3>
+            <p className="text-sm font-sans">Autonomous Pathfinding Simulations & Real-time Telemetry Feeds (Under Development)</p>
           </div>
         </section>
 
@@ -56,29 +54,30 @@ const Dashboard: React.FC = () => {
             </div>
             <div>
               <div className="text-[10px] font-bold text-safety-orange tracking-[0.3em] uppercase font-display">System Spec</div>
-              <div className="text-xs text-cad-gray">ROB_ARCH // GEN_2025.02</div>
+              <div className="text-xs text-cad-gray uppercase font-bold">ROB_ARCH // GEN_2025.02</div>
             </div>
           </div>
           
           <div className="flex gap-12 font-display">
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-safety-orange/40 uppercase font-bold">Connections</span>
-              <a href="https://github.com/sirpy-ai" target="_blank" className="text-xs hover:text-safety-orange transition-colors flex items-center gap-2">
+              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">External_Links</span>
+              <a href="https://github.com/sirpy-ai" target="_blank" rel="noopener noreferrer" className="text-xs text-white hover:text-safety-orange transition-colors flex items-center gap-2 font-bold uppercase tracking-wider">
                  GITHUB <span className="material-symbols-outlined text-[10px]">open_in_new</span>
               </a>
-              <a href="https://www.linkedin.com/in/sirpy-s/" target="_blank" className="text-xs hover:text-safety-orange transition-colors flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/sirpy-s/" target="_blank" rel="noopener noreferrer" className="text-xs text-white hover:text-safety-orange transition-colors flex items-center gap-2 font-bold uppercase tracking-wider">
                  LINKEDIN <span className="material-symbols-outlined text-[10px]">open_in_new</span>
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-safety-orange/40 uppercase font-bold">Site Data</span>
-              <span className="text-[10px] text-gray-500">ENGINE: VEO-3.1</span>
-              <span className="text-[10px] text-gray-500">UI_MODE: CAD_HUD</span>
+              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">Metadata</span>
+              <span className="text-[10px] text-gray-500 font-bold">ENGINE: VEO-3.1</span>
+              <span className="text-[10px] text-gray-500 font-bold">UI_MODE: PERCEPTION_HUD</span>
             </div>
           </div>
 
-          <div className="text-[10px] font-display text-gray-600">
-            © 2025 SIRPY_PERCEPTION_SYSTEMS. ALL MODULES OPERATIONAL.
+          <div className="text-[10px] font-display text-gray-600 font-bold uppercase tracking-widest text-right">
+            © 2025 SIRPY_PERCEPTION_SYSTEMS.<br />
+            ALL MODULES OPERATIONAL.
           </div>
         </footer>
       </main>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SKILLS } from '../constants';
 
@@ -15,17 +14,15 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
       <div className="flex items-center gap-6 mb-16">
         <div className="flex flex-col">
           <span className="text-safety-orange text-[10px] font-bold tracking-[0.4em] mb-1">SECTION_01</span>
-          <h2 className="text-3xl font-black text-white tracking-tighter uppercase">CAPABILITIES_MATRIX</h2>
+          <h2 className="text-3xl font-black text-white tracking-tighter uppercase m-0">CAPABILITIES_MATRIX</h2>
         </div>
         <div className="h-[1px] grow bg-cad-gray/20"></div>
-        {SKILLS.length > 4 && (
-          <button 
-            onClick={() => setExpanded(!expanded)}
-            className="px-6 py-2 border border-safety-orange/40 text-[10px] font-bold text-safety-orange hover:bg-safety-orange/10 transition-all uppercase tracking-widest"
-          >
-            {expanded ? 'COLLECT_MATRIX' : 'EXPAND_MATRIX'}
-          </button>
-        )}
+        <button 
+          onClick={() => setExpanded(!expanded)}
+          className="px-6 py-2 border border-safety-orange/40 text-[10px] font-bold text-safety-orange hover:bg-safety-orange/10 transition-all uppercase tracking-widest"
+        >
+          {expanded ? 'COLLECT_MATRIX' : 'EXPAND_MATRIX'}
+        </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -38,21 +35,15 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
           >
             <div className="flex items-center justify-between px-4 py-2 bg-cad-gray/10 border-b border-cad-gray/40 group-hover:bg-safety-orange group-hover:border-safety-orange transition-colors">
               <span className="text-[10px] font-bold text-safety-orange group-hover:text-[#0f172a] transition-colors uppercase tracking-widest">
-                DETECTION: {skill.id}
+                DETECTION: {skill.id.toUpperCase()}
               </span>
-              <span className="text-[10px] font-bold text-safety-orange group-hover:text-[#0f172a] opacity-60">
-                0.99
-              </span>
+              <span className="text-[10px] font-bold text-safety-orange group-hover:text-[#0f172a] opacity-60">0.99</span>
             </div>
 
             <div className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <span className="material-symbols-outlined text-safety-orange text-3xl opacity-80">
-                  {skill.icon}
-                </span>
-                <h3 className="text-lg font-bold text-white uppercase group-hover:text-safety-orange transition-colors">
-                  {skill.category}
-                </h3>
+                <span className="material-symbols-outlined text-safety-orange text-3xl opacity-80">{skill.icon}</span>
+                <h3 className="text-lg font-bold text-white uppercase group-hover:text-safety-orange transition-colors m-0">{skill.category}</h3>
               </div>
 
               <p className="text-xs text-slate-400 leading-relaxed font-sans mb-6 min-h-[48px]">
@@ -84,6 +75,12 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
             <div className="absolute bottom-0 right-0 size-2 border-b border-r border-safety-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
         ))}
+        {!expanded && SKILLS.length > 4 && (
+          <div className="border border-cad-gray/20 border-dashed flex flex-col items-center justify-center p-8 opacity-40 hover:opacity-100 transition-opacity cursor-pointer" onClick={() => setExpanded(true)}>
+             <span className="material-symbols-outlined text-safety-orange mb-2">add_circle</span>
+             <span className="text-[10px] font-bold font-display uppercase tracking-widest text-white">LOAD_ADDITIONAL_SENSORS</span>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,9 +1,11 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -16,13 +18,11 @@ const Hero: React.FC = () => {
             <span className="size-1.5 bg-safety-orange animate-ping"></span>
             <span className="text-[10px] font-display font-bold text-safety-orange tracking-[0.4em] uppercase">Status: Nominal</span>
           </div>
-          <h1 className="text-6xl lg:text-8xl font-black text-white leading-[0.85] font-display tracking-tighter">
-            SELVARAJAN<br />
-            <span className="text-safety-orange">SIRPY</span>
+          <h1 className="text-6xl lg:text-8xl font-black text-white leading-none font-display tracking-tighter">
+            <div className="block">SELVARAJAN</div>
+            <div className="text-safety-orange block">SIRPY</div>
           </h1>
-          <h2 className="text-xl font-bold tracking-widest text-cad-gray uppercase font-display border-l-2 border-safety-orange pl-4 py-1">
-            Robotics Software Engineer
-          </h2>
+          <h2 className="text-xl font-bold tracking-widest text-cad-gray uppercase font-display border-l-2 border-safety-orange pl-4 py-1">Robotics Software Engineer</h2>
           <p className="max-w-md text-sm text-slate-400 font-sans leading-relaxed">
             Initializing autonomous perception protocols and sensor fusion algorithms. Architecting scalable deep learning models and real-time embedded firmware for unstructured environments.
           </p>
@@ -78,8 +78,8 @@ const Hero: React.FC = () => {
           </svg>
           
           <div className="absolute top-0 right-0 p-4 font-display text-[9px] text-safety-orange/50 uppercase tracking-widest">
-            Module: Perception_Core<br />
-            Ref: S-119-02
+            <div className="block">Module: Perception_Core</div>
+            <div className="block">Ref: S-119-02</div>
           </div>
           
           <div className="absolute top-2 left-2 size-4 border-t border-l border-safety-orange"></div>
