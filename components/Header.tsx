@@ -26,8 +26,7 @@ const Header: React.FC<HeaderProps> = ({ telemetry }) => {
             { label: 'SYSTEM_SPECS', id: 'hud' },
             { label: 'CAPABILITIES', id: 'skills' },
             { label: 'MODULES', id: 'modules' },
-            { label: 'MISSION_LOGS', id: 'timeline' },
-            { label: 'LABS', id: 'labs' }
+            { label: 'MISSION_LOGS', id: 'timeline' }
           ].map((item, idx) => (
             <a 
               key={item.label}

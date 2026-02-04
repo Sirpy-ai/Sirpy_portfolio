@@ -18,7 +18,7 @@
             "electric-violet": "#8b5cf6",
             "gunmetal": "#0f172a",
             "cad-gray": "#334155",
-            "primary": "#f97316", // Safety Orange as primary
+            "primary": "#f97316",
           },
           fontFamily: {
             "display": ["JetBrains Mono", "monospace"],
@@ -28,6 +28,7 @@
             'aperture-pulse': 'aperture 3s ease-in-out infinite',
             'reticle-rotate': 'spin 10s linear infinite',
             'float': 'float 6s ease-in-out infinite',
+            'scanline': 'scanline 10s linear infinite',
           },
           keyframes: {
             aperture: {
@@ -37,6 +38,10 @@
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-10px)' }
+            },
+            scanline: {
+              '0%': { transform: 'translateY(-100%)' },
+              '100%': { transform: 'translateY(100vh)' }
             }
           }
         }
@@ -49,6 +54,7 @@
       color: #e2e8f0;
       cursor: crosshair;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     .blueprint-grid {
       background-image: 
@@ -62,32 +68,20 @@
         linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
       background-size: 10px 10px;
     }
-    .bracket-box {
-      position: relative;
-    }
-    .bracket-box::before, .bracket-box::after {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-color: #f97316;
-    }
-    .bracket-box::before { top: 0; left: 0; border-top: 1px solid; border-left: 1px solid; }
-    .bracket-box::after { bottom: 0; right: 0; border-bottom: 1px solid; border-right: 1px solid; }
-
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0f172a; }
     ::-webkit-scrollbar-thumb { background: #f97316; }
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@^19.2.4",
+      "react-dom": "https://esm.sh/react-dom@^19.2.4",
+      "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+      "react/": "https://esm.sh/react@^19.2.4/"
+    }
   }
-}
-</script>
+  </script>
 </head>
 <body class="font-sans">
   <div id="root"></div>

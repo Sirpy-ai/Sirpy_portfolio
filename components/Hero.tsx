@@ -2,6 +2,10 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="hud" className="grid lg:grid-cols-2 gap-20 items-center py-20 relative">
       <div className="absolute -top-20 -left-20 w-64 h-64 bg-safety-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -25,11 +29,17 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap gap-6">
-          <button onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 bg-safety-orange text-[#0f172a] font-display font-black text-xs tracking-[0.2em] hover:bg-white transition-all hover:scale-[1.02] flex items-center gap-4">
+          <button 
+            onClick={() => scrollTo('modules')} 
+            className="px-10 py-4 bg-safety-orange text-[#0f172a] font-display font-black text-xs tracking-[0.2em] hover:bg-white transition-all hover:scale-[1.02] flex items-center gap-4"
+          >
             INIT_DEPLOYMENT()
             <span className="text-lg">→</span>
           </button>
-          <button onClick={() => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })} className="px-10 py-4 border border-cad-gray text-white font-display font-bold text-xs tracking-[0.2em] hover:border-safety-orange transition-all hover:bg-safety-orange/5">
+          <button 
+            onClick={() => scrollTo('timeline')} 
+            className="px-10 py-4 border border-cad-gray text-white font-display font-bold text-xs tracking-[0.2em] hover:border-safety-orange transition-all hover:bg-safety-orange/5"
+          >
             LOGS_HISTORY
           </button>
         </div>
