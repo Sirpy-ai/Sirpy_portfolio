@@ -1,16 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
-import Intro from './components/Intro';
-import Dashboard from './components/Dashboard';
+import Intro from './components/Intro.tsx';
+import Dashboard from './components/Dashboard.tsx';
 
 const App: React.FC = () => {
   const [bootState, setBootState] = useState<'booting' | 'ready' | 'active'>('booting');
 
   useEffect(() => {
-    // Systems calibration time (independent of visual typing)
+    // Global system readiness timer
     const timer = setTimeout(() => {
       setBootState('ready');
-    }, 4500);
+    }, 5000); // 5 seconds to ensure typing has enough time
     return () => clearTimeout(timer);
   }, []);
 

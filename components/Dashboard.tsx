@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Hero from './Hero';
-import SkillsMatrix from './SkillsMatrix';
-import ProjectModules from './ProjectModules';
-import ExperienceTimeline from './ExperienceTimeline';
+import Header from './Header.tsx';
+import Hero from './Hero.tsx';
+import SkillsMatrix from './SkillsMatrix.tsx';
+import ProjectModules from './ProjectModules.tsx';
+import ExperienceTimeline from './ExperienceTimeline.tsx';
 
 const Dashboard: React.FC = () => {
   const [activeSkillId, setActiveSkillId] = useState<string | null>(null);
