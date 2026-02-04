@@ -7,11 +7,10 @@ const App: React.FC = () => {
   const [bootState, setBootState] = useState<'booting' | 'ready' | 'active'>('booting');
 
   useEffect(() => {
-    // We set to ready after a fixed time. 
-    // The intro typing takes about 4-5s total.
+    // Systems calibration time (independent of visual typing)
     const timer = setTimeout(() => {
       setBootState('ready');
-    }, 4000);
+    }, 4500);
     return () => clearTimeout(timer);
   }, []);
 
