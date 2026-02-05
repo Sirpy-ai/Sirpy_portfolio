@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './Header.tsx';
 import Hero from './Hero.tsx';
@@ -43,8 +42,8 @@ const Dashboard: React.FC = () => {
         
         <section id="labs" className="pt-20 border-t border-cad-gray/30">
           <div className="p-12 bg-cad-gray/10 text-center opacity-40 group hover:opacity-100 transition-all border border-dashed border-cad-gray/30">
-            <h3 className="font-display font-bold text-safety-orange tracking-widest mb-4 uppercase">Future Expansion Modules</h3>
-            <p className="text-sm font-sans">Autonomous Pathfinding Simulations & Real-time Telemetry Feeds (Under Development)</p>
+            <h3 className="font-display font-bold text-safety-orange tracking-widest mb-4 uppercase">Advanced Laboratory Modules</h3>
+            <p className="text-sm font-sans">Autonomous Pathfinding Simulations & Real-time Telemetry Feeds (Deployment Pending)</p>
           </div>
         </section>
 
@@ -54,14 +53,14 @@ const Dashboard: React.FC = () => {
               <span className="material-symbols-outlined text-safety-orange text-3xl">precision_manufacturing</span>
             </div>
             <div>
-              <div className="text-[10px] font-bold text-safety-orange tracking-[0.3em] uppercase font-display">System Spec</div>
-              <div className="text-xs text-cad-gray uppercase font-bold">ROB_ARCH // GEN_2025.02</div>
+              <div className="text-[10px] font-bold text-safety-orange tracking-[0.3em] uppercase font-display">System Specification</div>
+              <div className="text-xs text-cad-gray uppercase font-bold tracking-widest">ROBOTIC ARCHITECTURE // 2025.02</div>
             </div>
           </div>
           
           <div className="flex gap-12 font-display">
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">External_Links</span>
+              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">CONNECT</span>
               <a href="https://github.com/sirpy-ai" target="_blank" rel="noopener noreferrer" className="text-xs text-white hover:text-safety-orange transition-colors flex items-center gap-2 font-bold uppercase tracking-wider">
                  GITHUB <span className="material-symbols-outlined text-[10px]">open_in_new</span>
               </a>
@@ -70,15 +69,15 @@ const Dashboard: React.FC = () => {
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">Metadata</span>
-              <span className="text-[10px] text-gray-500 font-bold">ENGINE: VEO-3.1</span>
-              <span className="text-[10px] text-gray-500 font-bold">UI_MODE: PERCEPTION_HUD</span>
+              <span className="text-[10px] text-safety-orange/40 uppercase font-bold tracking-widest">SYSTEM METRICS</span>
+              <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase">ENGINE: VEO 3.1</span>
+              <span className="text-[10px] text-gray-500 font-bold tracking-widest uppercase">INTERFACE: PERCEPTION HUD</span>
             </div>
           </div>
 
           <div className="text-[10px] font-display text-gray-600 font-bold uppercase tracking-widest text-right">
-            © 2025 SIRPY_PERCEPTION_SYSTEMS.<br />
-            ALL MODULES OPERATIONAL.
+            © 2025 SIRPY PERCEPTION SYSTEMS.<br />
+            ALL DEPLOYMENTS OPERATIONAL.
           </div>
         </footer>
       </main>

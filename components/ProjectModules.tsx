@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '../constants.tsx';
 
 interface ProjectModulesProps {
   activeSkillId: string | null;
@@ -14,15 +13,15 @@ const ProjectModules: React.FC<ProjectModulesProps> = ({ activeSkillId }) => {
     <section id="modules" className="font-display">
       <div className="flex items-center gap-6 mb-16">
         <div className="flex flex-col">
-          <span className="text-safety-orange text-[10px] font-bold tracking-[0.4em] mb-1">SECTION_02</span>
-          <h2 className="text-3xl font-black text-white tracking-tighter uppercase">DEPLOYED_MODULES</h2>
+          <span className="text-safety-orange text-[10px] font-bold tracking-[0.4em] mb-1">SECTION 02</span>
+          <h2 className="text-3xl font-black text-white tracking-tighter uppercase">DEPLOYED MODULES</h2>
         </div>
         <div className="h-[1px] grow bg-cad-gray/20"></div>
         <button 
           onClick={() => setShowAll(!showAll)}
-          className="text-[10px] font-bold text-safety-orange border border-safety-orange/40 px-4 py-2 hover:bg-safety-orange/10 transition-colors whitespace-nowrap"
+          className="text-[10px] font-bold text-safety-orange border border-safety-orange/40 px-4 py-2 hover:bg-safety-orange/10 transition-colors whitespace-nowrap uppercase tracking-widest"
         >
-          {showAll ? 'HIDE_MODULES' : 'BROWSE_ALL_DEPLOYMENTS'}
+          {showAll ? 'HIDE MODULES' : 'VIEW ALL DEPLOYMENTS'}
         </button>
       </div>
 
@@ -42,9 +41,9 @@ const ProjectModules: React.FC<ProjectModulesProps> = ({ activeSkillId }) => {
                   <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-safety-orange"></div>
                   <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-safety-orange"></div>
                   <div className="absolute bottom-0 right-0 size-4 border-b-2 border-r-2 border-safety-orange"></div>
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-[8px] font-black bg-safety-orange text-[#0f172a] px-3 py-1 tracking-[0.2em]">
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-[8px] font-black bg-safety-orange text-[#0f172a] px-3 py-1 tracking-[0.2em] whitespace-nowrap">
                     <span className="material-symbols-outlined text-[10px]">target</span>
-                    MODULE_LINKED
+                    MODULE LINKED
                   </div>
                 </div>
               )}
@@ -60,7 +59,7 @@ const ProjectModules: React.FC<ProjectModulesProps> = ({ activeSkillId }) => {
                   <div className="absolute inset-0 blueprint-grid opacity-10"></div>
                   
                   <div className="absolute bottom-4 left-4">
-                    <div className="text-[8px] text-safety-orange font-bold tracking-[0.3em] uppercase mb-1">Focal_Subject</div>
+                    <div className="text-[8px] text-safety-orange font-bold tracking-[0.3em] uppercase mb-1">Module Subject</div>
                     <h4 className="text-lg font-black text-white uppercase tracking-tight">
                       {project.title}
                     </h4>
@@ -68,7 +67,7 @@ const ProjectModules: React.FC<ProjectModulesProps> = ({ activeSkillId }) => {
 
                   <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
                     <span className="text-[9px] px-2 py-0.5 bg-safety-orange text-[#0f172a] font-bold">ACTIVE</span>
-                    <span className="text-[7px] text-safety-orange/60 font-mono tracking-tighter">0x4F_A2_99</span>
+                    <span className="text-[7px] text-safety-orange/60 font-mono tracking-tighter uppercase">ID: 0x4F-A2-99</span>
                   </div>
                 </div>
 
@@ -91,7 +90,7 @@ const ProjectModules: React.FC<ProjectModulesProps> = ({ activeSkillId }) => {
                     {project.tech.map((t) => (
                       <div key={t} className="flex items-center gap-2 px-2 py-1.5 bg-cad-gray/10 border-l-2 border-safety-orange/40 text-[9px] text-white/80">
                         <span className="size-1 bg-safety-orange/40"></span>
-                        <span className="font-bold">{t.toUpperCase()}</span>
+                        <span className="font-bold tracking-wider uppercase">{t}</span>
                       </div>
                     ))}
                   </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SKILLS } from '../constants';
+import { SKILLS } from '../constants.tsx';
 
 interface SkillsMatrixProps {
   onSkillHover: (id: string | null) => void;
@@ -13,15 +13,15 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
     <section id="skills" className="font-display">
       <div className="flex items-center gap-6 mb-16">
         <div className="flex flex-col">
-          <span className="text-safety-orange text-[10px] font-bold tracking-[0.4em] mb-1">SECTION_01</span>
-          <h2 className="text-3xl font-black text-white tracking-tighter uppercase m-0">CAPABILITIES_MATRIX</h2>
+          <span className="text-safety-orange text-[10px] font-bold tracking-[0.4em] mb-1">SECTION 01</span>
+          <h2 className="text-3xl font-black text-white tracking-tighter uppercase m-0">CAPABILITIES MATRIX</h2>
         </div>
         <div className="h-[1px] grow bg-cad-gray/20"></div>
         <button 
           onClick={() => setExpanded(!expanded)}
           className="px-6 py-2 border border-safety-orange/40 text-[10px] font-bold text-safety-orange hover:bg-safety-orange/10 transition-all uppercase tracking-widest"
         >
-          {expanded ? 'COLLECT_MATRIX' : 'EXPAND_MATRIX'}
+          {expanded ? 'COLLECT MATRIX' : 'EXPAND MATRIX'}
         </button>
       </div>
 
@@ -78,7 +78,7 @@ const SkillsMatrix: React.FC<SkillsMatrixProps> = ({ onSkillHover }) => {
         {!expanded && SKILLS.length > 4 && (
           <div className="border border-cad-gray/20 border-dashed flex flex-col items-center justify-center p-8 opacity-40 hover:opacity-100 transition-opacity cursor-pointer" onClick={() => setExpanded(true)}>
              <span className="material-symbols-outlined text-safety-orange mb-2">add_circle</span>
-             <span className="text-[10px] font-bold font-display uppercase tracking-widest text-white">LOAD_ADDITIONAL_SENSORS</span>
+             <span className="text-[10px] font-bold font-display uppercase tracking-widest text-white">LOAD MORE SENSORS</span>
           </div>
         )}
       </div>

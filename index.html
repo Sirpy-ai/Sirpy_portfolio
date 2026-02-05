@@ -1,14 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIAGNOSTIC: SIRPY_S // PERCEPTION_ENGINE</title>
+  <title>DIAGNOSTIC: SIRPY S // PERCEPTION ENGINE</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Babel for on-the-fly TSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
   <script>
+    // Shim for environments that expect process.env
+    window.process = { env: { NODE_ENV: 'production' } };
+    
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -76,27 +80,21 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0f172a; }
     ::-webkit-scrollbar-thumb { background: #f97316; }
-    
-    /* Ensure the app is visible even if animations are slow */
-    #root {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    #root { min-height: 100vh; display: flex; flex-direction: column; }
   </style>
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@^19.2.4",
-      "react-dom": "https://esm.sh/react-dom@^19.2.4",
-      "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-      "react/": "https://esm.sh/react@^19.2.4/"
-    }
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
   }
-  </script>
+}
+</script>
 </head>
 <body class="font-sans">
   <div id="root"></div>
-  <script type="module" src="index.tsx"></script>
+  <!-- Fix: Explicitly defining presets and using a module type for Babel -->
+  <script type="text/babel" data-presets="react,typescript" data-type="module" src="index.tsx"></script>
 </body>
 </html>

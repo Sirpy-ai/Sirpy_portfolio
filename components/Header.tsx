@@ -13,27 +13,27 @@ const Header: React.FC<HeaderProps> = ({ telemetry }) => {
             <span className="text-safety-orange font-bold text-xs">+</span>
           </div>
           <div className="flex flex-col">
-            <h2 className="text-xs font-bold tracking-widest text-white uppercase m-0">DIAGNOSTIC: SIRPY_S</h2>
-            <span className="text-[8px] text-safety-orange opacity-60 font-bold uppercase">FIRMWARE_V2.0.4</span>
+            <h2 className="text-xs font-bold tracking-widest text-white uppercase m-0">DIAGNOSTIC: SIRPY S</h2>
+            <span className="text-[8px] text-safety-orange opacity-60 font-bold uppercase">FIRMWARE V2.0.4</span>
           </div>
         </div>
         
         <nav className="hidden lg:flex items-center gap-8">
           <a href="#hud" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
             <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">01</span>
-            <span className="font-bold">SYSTEM_SPECS</span>
+            <span className="font-bold uppercase tracking-widest">System Overview</span>
           </a>
           <a href="#skills" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
             <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">02</span>
-            <span className="font-bold">CAPABILITIES</span>
+            <span className="font-bold uppercase tracking-widest">Capabilities</span>
           </a>
           <a href="#modules" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
             <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">03</span>
-            <span className="font-bold">MODULES</span>
+            <span className="font-bold uppercase tracking-widest">Deployed Modules</span>
           </a>
           <a href="#timeline" className="group text-[10px] tracking-widest hover:text-safety-orange transition-colors flex items-center gap-2">
             <span className="text-safety-orange/30 group-hover:text-safety-orange font-bold">04</span>
-            <span className="font-bold">MISSION_LOGS</span>
+            <span className="font-bold uppercase tracking-widest">Mission Logs</span>
           </a>
         </nav>
 
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ telemetry }) => {
           </div>
           <div className="flex items-center gap-4 bg-cad-gray/20 px-4 py-1.5 rounded-sm border border-cad-gray/40">
             <div className="flex flex-col items-end">
-              <span className="text-[8px] text-safety-orange/60 font-bold uppercase tracking-widest">Elev_Z</span>
+              <span className="text-[8px] text-safety-orange/60 font-bold uppercase tracking-widest">Altitude</span>
               <span className="text-xs font-bold text-white tabular-nums">{telemetry.z}m</span>
             </div>
             <div className="h-6 w-[1px] bg-cad-gray/50"></div>

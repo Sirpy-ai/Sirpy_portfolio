@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 const BOOT_MESSAGES = [
-  "INITIALIZING SENSORS...",
-  "CALIBRATING IMU...",
-  "LOADING WEIGHTS...",
-  "SYSTEMS NOMINAL."
+  "INITIALIZING SENSORS",
+  "CALIBRATING IMU DATA",
+  "LOADING NEURAL WEIGHTS",
+  "SYSTEMS NOMINAL"
 ];
 
 interface IntroProps {
@@ -36,7 +35,7 @@ const Intro: React.FC<IntroProps> = ({ isReady, onEnter }) => {
         if (charIndex <= currentMessage.length) {
           setDisplayText(currentMessage.slice(0, charIndex));
           charIndex++;
-          animationFrameRef.current = window.setTimeout(runSequence, 50);
+          animationFrameRef.current = window.setTimeout(runSequence, 40);
         } else {
           isWaiting = true;
           setCurrentStep(messageIndex);
@@ -45,7 +44,7 @@ const Intro: React.FC<IntroProps> = ({ isReady, onEnter }) => {
             charIndex = 0;
             messageIndex++;
             runSequence();
-          }, 800);
+          }, 700);
         }
       }
     };
@@ -57,10 +56,9 @@ const Intro: React.FC<IntroProps> = ({ isReady, onEnter }) => {
     };
   }, []);
 
-  // Force complete if system is ready but typing got stuck (fail-safe)
   useEffect(() => {
     if (isReady && !isTypingComplete) {
-      const failSafe = setTimeout(() => setIsTypingComplete(true), 2000);
+      const failSafe = setTimeout(() => setIsTypingComplete(true), 1500);
       return () => clearTimeout(failSafe);
     }
   }, [isReady, isTypingComplete]);
@@ -100,21 +98,21 @@ const Intro: React.FC<IntroProps> = ({ isReady, onEnter }) => {
           onClick={onEnter}
           className="group relative px-12 py-4 border border-safety-orange bg-safety-orange/5 hover:bg-safety-orange text-safety-orange hover:text-[#0f172a] font-display font-black text-xs tracking-[0.4em] transition-all duration-300 overflow-hidden"
         >
-          <span className="relative z-10">OPEN_PERCEPTION_ENGINE</span>
+          <span className="relative z-10">OPEN PERCEPTION ENGINE</span>
           <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 opacity-20"></div>
         </button>
-        <span className="text-[9px] font-display font-bold text-safety-orange/40 tracking-[0.2em] animate-pulse uppercase">Authorization_Granted</span>
+        <span className="text-[9px] font-display font-bold text-safety-orange/40 tracking-[0.2em] animate-pulse uppercase">Authorization Granted</span>
       </div>
 
       <div className="absolute top-10 left-10 font-display text-[9px] opacity-30 select-none">
-        <div>AXIS_X: 32.119</div>
-        <div>AXIS_Y: 104.992</div>
-        <div className="mt-1">SENS_REF: 0x44A</div>
+        <div>COORDINATE X: 32.119</div>
+        <div>COORDINATE Y: 104.992</div>
+        <div className="mt-1">SENSOR REF: 0x44A</div>
       </div>
       <div className="absolute bottom-10 right-10 font-display text-[9px] opacity-30 text-right select-none">
-        <div>LENS: WIDE_ANGLE_70</div>
+        <div>LENS: WIDE ANGLE 70</div>
         <div>FOCAL: 2.8f</div>
-        <div className="mt-1">VER: PERCEPTION_2.0.4</div>
+        <div className="mt-1">VERSION: 2.0.4</div>
       </div>
     </div>
   );

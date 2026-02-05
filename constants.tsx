@@ -1,5 +1,4 @@
-
-import { Skill, Project, Experience } from './types';
+import { Skill, Project, Experience } from './types.ts';
 
 export const SKILLS: Skill[] = [
   {
@@ -39,7 +38,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Humanoid Diagnostic 01',
     tech: ['Python SDK', 'Asyncio', 'OpenCV', 'Facial Recognition'],
     metric: '3 Units',
-    metricLabel: 'MODULE_SYNC',
+    metricLabel: 'MODULE SYNC',
     description: 'Orchestrated a humanoid robot architecture integrating vision-based attendance and voice interactivity.',
     image: 'https://picsum.photos/seed/robotic-cad1/800/450',
     relatedSkills: ['robotics', 'ai-vision', 'tools']
@@ -47,10 +46,10 @@ export const PROJECTS: Project[] = [
   {
     id: 'cnn-classifier',
     title: 'Visual Logic Classifier',
-    subtitle: 'CNN Model: Weight Set V2',
+    subtitle: 'Neural Weight Set V2',
     tech: ['TensorFlow', 'Keras', 'Adam Opt', 'Webots'],
     metric: '99.96%',
-    metricLabel: 'CONFIDENCE_LEVEL',
+    metricLabel: 'CONFIDENCE LEVEL',
     description: 'Engineered a high-precision neural system for real-time object identification in dynamic test environments.',
     image: 'https://picsum.photos/seed/neural-view/800/450',
     relatedSkills: ['ai-vision', 'tools']
@@ -60,8 +59,8 @@ export const PROJECTS: Project[] = [
     title: 'Autonomous Scout Rover',
     subtitle: 'Embedded Unit: Mk-III',
     tech: ['STM32 Nucleo', 'C++', 'Mbed OS', 'PIR/Ultrasonic'],
-    metric: '<200ms',
-    metricLabel: 'FOCAL_LATENCY',
+    metric: '< 200ms',
+    metricLabel: 'RESPONSE TIME',
     description: 'Developed a bare-metal control system on STM32 hardware implementing multi-sensor fusion for patrol logic.',
     image: 'https://picsum.photos/seed/rover-cad/800/450',
     relatedSkills: ['embedded', 'robotics']
@@ -72,24 +71,24 @@ export const EXPERIENCES: Experience[] = [
   {
     role: 'Lead Integration Engineer',
     company: 'Humanoid Integration Team',
-    range: 'T-minus 0 Years (Current)',
-    branch: 'production/humanoid-v2',
+    range: 'CURRENT MISSION',
+    branch: 'HUMANOID V2',
     action: 'Architected the asynchronous event-loop for the Alpha Mini robot, managing navigation and vision feedback concurrently.',
     tags: ['Python', 'Asyncio', 'ROS2']
   },
   {
     role: 'AI Model Optimization Spec',
     company: 'Robotics Perception Module',
-    range: 'T-minus 1 Year',
-    branch: 'dev/neural-opt',
+    range: '1 YEAR ACTIVE',
+    branch: 'NEURAL OPTIMIZATION',
     action: 'Optimized custom CNN architecture weights using Adam optimization for superior accuracy over baseline models.',
     tags: ['TensorFlow', 'CNN', 'Weights']
   },
   {
     role: 'Embedded Systems Architect',
     company: 'Autonomous Systems Unit',
-    range: 'T-minus 2 Years',
-    branch: 'legacy/stm32-baremetal',
+    range: '2 YEARS ACTIVE',
+    branch: 'STM32 BAREMETAL',
     action: 'Deployed sensor-fused navigation algorithms on STM32 hardware without RTOS for maximum resource efficiency.',
     tags: ['C++', 'STM32', 'Firmware']
   }
