@@ -1,6 +1,8 @@
 
 {
+  "version": 2,
   "cleanUrls": true,
+  "outputDirectory": "dist",
   "headers": [
     {
       "source": "/(.*)\\.(ts|tsx)",

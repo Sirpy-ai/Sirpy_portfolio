@@ -5,6 +5,6 @@
   "private": true,
   "description": "Robotics Software Engineer Portfolio - Perception HUD",
   "scripts": {
-    "build": "echo 'Static deployment: No build step required'"
+    "build": "mkdir -p dist && cp -rf index.html index.tsx constants.tsx types.ts App.tsx components dist/"
   }
 }
