@@ -4,8 +4,7 @@
   "version": "2.0.4",
   "private": true,
   "description": "Robotics Software Engineer Portfolio - Perception HUD",
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+  "scripts": {
+    "build": "echo 'Static deployment: No build step required'"
   }
 }
